@@ -1459,6 +1459,14 @@ JitsiConference.prototype.muteParticipant = function(id) {
     }
     this.room.muteParticipant(participant.getJid(), true);
 };
+JitsiConference.prototype.unmuteParticipant = function(id) {
+    const participant = this.getParticipantById(id);
+
+    if (!participant) {
+        return;
+    }
+    this.room.muteParticipant(participant.getJid(), false);
+};
 
 /* eslint-disable max-params */
 
